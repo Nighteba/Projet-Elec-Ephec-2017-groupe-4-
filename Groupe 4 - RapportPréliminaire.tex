@@ -14,24 +14,24 @@
 
 \section{Objectifs}
 	Réaliser une carte électronique centrée autour d'un microcontrôleur. Le rôle de cette carte sera de définir si la température d'une pièce
-	dépasse une limite préalablement définie, et d'émettre une alarme le cas échéant. Pour ce faire, la carte sera notamment composée:
+	dépasse une limite préalablement définie, et d'émettre une alarme le cas échéant. Pour ce faire, la carte sera notamment composée :
 	\begin{itemize}
-		\item d'un microcontrôleur (PIC 18f458) qui recevra des input, les traitera, et enverra les réponses sur les outputs adéquats
+		\item d'un microcontrôleur (PIC 18f458) qui recevra des inputs, les traitera, et enverra les réponses sur les outputs adéquats
 		\item d'une sonde de température (LM35), qui enverra la température au PIC sous forme d'un signal analogique
 		\item de 2 afficheurs 7 segments qui afficheront en temps réel la température ressentie par la sonde
 		\item d'une LED verte active tant que la température est en dessous de la limite
 		\item d'une LED rouge qui clignotera tant que la température ne sera pas en dessous de la limite
 	\end{itemize}
-	L'état de la carte sera interfacée à l'aide d'une application Java, et le PIC sera programmé en C.	
+	L'état de la carte sera interfacé à l'aide d'une application Java, et le PIC sera programmé en C.	
 
 \section{Cahier des charges}
-	La carte sera capable:
+	La carte sera capable :
 	\begin{itemize}
 		\item d'afficher la température
 		\item d'émettre en permanence une lumière verte quand la température est acceptable, et une lumière rouge clignotante le cas échéant
-		\item d'écouter l'interface Java via un port particulier et de réagir en conséquences
+		\item d'écouter l'interface Java via un port particulier et de réagir en conséquence
 	\end{itemize}	
-	L'interface Java permettra de communiquer avec la carte via le port RS232 d'un PC, et sera capable:
+	L'interface Java permettra de communiquer avec la carte via le port RS232 d'un PC, et sera capable :
 	\begin{itemize}
 		\item de régler la température limite
 		\item de visualiser l'état de la carte (température ambiante, alerte, etc...)

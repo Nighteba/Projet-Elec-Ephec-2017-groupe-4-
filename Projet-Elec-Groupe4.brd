@@ -73,7 +73,7 @@
 <plain>
 <wire x1="0" y1="0" x2="100" y2="0" width="0" layer="20"/>
 <wire x1="102.54" y1="82.54" x2="-1.27" y2="83.81" width="0" layer="20"/>
-<text x="64.77" y="17.78" size="1.778" layer="16" rot="MR0">GROUPE 4</text>
+<text x="100.33" y="16.51" size="1.778" layer="16" rot="MR0">GROUPE 4</text>
 </plain>
 <libraries>
 <library name="rcl">

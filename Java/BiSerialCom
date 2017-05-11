@@ -1,0 +1,19 @@
+public class BiserialCom
+{
+  void connect( String nomDuCom)
+  {
+    try
+    {
+      
+    }
+    catch(IOException e)
+    {
+      System.err.println(e.getMessage());
+ 
+    }
+    catch(Exception e)
+    {
+      System.err.println(e.getMessage());
+    }
+  }
+}

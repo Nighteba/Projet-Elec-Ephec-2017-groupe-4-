@@ -1,0 +1,25 @@
+import java.io.*;
+
+public class SerialPortWriter
+{
+  public SerialPortWriter()
+  {
+      
+  }
+  
+  public void write()
+  {
+      try
+      {
+      
+      }
+      catch(IOException i)
+      {
+        System.err.println(i.getMessage());
+      }
+      catch(Exception e)
+      {
+        System.err.println(e.getMessage());
+      }
+  }
+}

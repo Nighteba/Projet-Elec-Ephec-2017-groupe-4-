@@ -1,11 +1,33 @@
-public class SerialPortReader()
+import gnu.io.*;
+import java.io.*;
+
+public class SerialPortReader implements SerialPortEventListener
 {
+    private InputStreamReader entree;
+    private byte[] buffer = new byte[1024];
+    
+    /**
+    *Constructeur d'objets de la classeSerialPortReader.
+    *
+    **/
+    public SerialPortReader()
+    {
+        
+    }
+    
+    public void serialEvent(InputStreamReader entre)
+    {
+        this.entree = entre;
+    }
+    
+    
     public void read()
     {
       try
       {
       
-      }catch(IOException e)
+      }
+      catch(IOException e)
       {
         System.err.println(e.getMessage());
       }

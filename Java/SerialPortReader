@@ -3,7 +3,7 @@ import java.io.*;
 
 public class SerialPortReader implements SerialPortEventListener
 {
-    private InputStreamReader entree;
+    private InputStreamReader entree;       //Entrée standard
     private byte[] buffer = new byte[1024];
     
     /**

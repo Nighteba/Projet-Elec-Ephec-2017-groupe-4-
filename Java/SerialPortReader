@@ -15,7 +15,12 @@ public class SerialPortReader implements SerialPortEventListener
         
     }
     
-    public void serialEvent(InputStreamReader entre)
+    public InputStreamReader getEntree()
+    {
+        return this.entree;
+    }
+    
+    public void setEntree(InputStreamReader entre)
     {
         this.entree = entre;
     }

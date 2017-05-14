@@ -1,0 +1,219 @@
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+
+/**
+*Classe representant une interface graphique (Graphic User Interface) de gestion de temperature.
+*
+*/
+public class ElectroGUI extends JFrame implements ActionListener {
+	
+	
+	//déclaration du contenant
+	private JPanel contentPane;
+	
+	//déclaration des champs de textes.
+	
+	private JTextField textField_1_tempActuelle;
+	private JTextField textField_2_tempUser;
+
+	private JTextField textField_id = new JTextField(); 
+	
+	//Declaration du "tableau" de films.
+	public JTable table;
+	private int temperature;
+	private String entreeUserTemp;
+	
+	//Initialisation des boutons.
+	
+	private JButton connectButton = new JButton("Connexion");
+	private JButton disconnectButton = new JButton("Déconnexion");
+	
+	// Initialisation des etiquettes pour les champs de texte.
+	
+	JLabel lblSeuil = new JLabel("Seuil de temperature : ");
+	JLabel lblTempUser = new JLabel("temperature entree :");
+	
+	
+	//Initialisation d'un champ de texte avec defilement horizontal/vertical.
+	
+	JScrollPane scrollPane = new JScrollPane();
+	private final JButton btnAffichecatalogue = new JButton("afficheCatalogue");
+	private JTextField txtEntrezUneTemp;
+
+	 
+	TextArea texteDescriptif = new TextArea();	// Champ de texte contenant la description.
+	
+	private final TextArea textAreaActeurs = new TextArea();	//Champ de texte contenant le casting d'un film.
+	
+
+
+
+
+
+
+	
+	/**
+	 * Lancement de l'application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ElectroGUI frame = new ElectroGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Constructeur de la fenêtre principale de l'interface.
+	 */
+	public ElectroGUI()
+	{
+		setTitle("Projet électronique");
+		
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 706, 446);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(Color.LIGHT_GRAY);		//couleur de la fenetre.
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		//Initialisations des labels.
+		
+		lblSeuil.setBounds(40, 78, 61, 14);
+		contentPane.add(lblSeuil);
+		
+		lblTempUser.setBounds(40, 102, 61, 14);
+		contentPane.add(lblTempUser);
+		
+		
+		
+		//Initialisation des champs de texte.
+		
+		
+		
+		textField_1_tempActuelle = new JTextField();
+		textField_1_tempActuelle.setColumns(10);
+		textField_1_tempActuelle.setBounds(111, 99, 86, 20);
+		contentPane.add(textField_1_tempActuelle);
+		
+		textField_2_tempUser = new JTextField();
+		textField_2_tempUser.setColumns(10);
+		textField_2_tempUser.setBounds(111, 124, 86, 20);
+		contentPane.add(textField_2_tempUser);
+		
+		scrollPane.addMouseListener(new MouseAdapter() {
+			@Override
+			/**
+			*Eventhandler pour les evenements lies aux clics de souris de l'utilisateur
+			*
+			*/
+			public void mouseClicked(MouseEvent arg0) {
+				//Display selected row in JTextefields
+				
+				   // Recuperation de l'index de la ligne selectionnee.
+		        int i = table.getSelectedRow();
+
+		        TableModel model = table.getModel();
+		        
+		         // Affiche la ligne selectionnee dans les JTexteFields.
+		        textField_id.setText(model.getValueAt(i,0).toString());
+		        textField_1_tempActuelle.setText(model.getValueAt(i,1).toString());
+		        textField_2_tempUser.setText(model.getValueAt(i,2).toString());
+		    
+				
+				
+
+			}
+		} // fin du MouseClicker
+
+		);	//fin du addMouseListener
+		
+				
+		scrollPane.setBounds(207, 75, 473, 144);
+		contentPane.add(scrollPane);
+		
+		
+		//ajout des boutons
+		
+		connectButton.addActionListener(this);
+		connectButton.setBounds(242, 11, 89, 23);
+		contentPane.add(connectButton);
+		
+		
+
+		disconnectButton.addActionListener(this);
+		disconnectButton.setBounds(242, 11, 89, 23);
+		contentPane.add(disconnectButton);
+		
+		
+		
+		
+	
+		
+				
+				
+			
+	}
+	
+	
+	
+	/**
+	 * Listener.
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		try
+		{	
+			Object source = e.getSource();
+			
+			if(source == connectButton)		//Si l'utilisateur a cliqué sur le bouton de creation de film :
+			{
+				
+				
+				
+			}
+			else if(source == disconnectButton)		//Si l'utilisateur a cliqué sur le bouton de recherche de film :
+			{
+				
+				
+			
+			}
+		}
+		catch(Exception exc)
+		{
+			exc.getMessage();
+		}
+		
+		}
+	
+}

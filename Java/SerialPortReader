@@ -25,12 +25,18 @@ public class SerialPortReader implements SerialPortEventListener
         this.entree = entre;
     }
     
-    
+    /**
+    *Methode de lecture.
+    **/
     public void read()
     {
       try
       {
-      
+        for(int i = 0; data = input.read()) > -1 && i < buffer.length;i++) {
+				if (donnee == '\n') {
+					break;
+				}
+				buffer[i] = (byte) donnee;
       }
       catch(IOException e)
       {

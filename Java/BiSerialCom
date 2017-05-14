@@ -1,11 +1,12 @@
 public class BiserialCom
 {
 
-    private InputStream entree;
-    private OutputStream sortie;
+   
     private SerialPortReader serial;
     private CommPort comPort;
     private SerialPort portSerie;
+     private InputStream entree;
+    private OutputStream sortie;
 
   public void connexion( String nomDuCom)
   {

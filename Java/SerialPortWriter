@@ -2,7 +2,7 @@ import java.io.*;
 
 public class SerialPortWriter 
 {
-	OutputStream hors;	// Sortie standard
+	OutputStream sortie;	// Sortie standard
 	
 	/**
 	 * Constructeur d'objets de type SerialPortWriter
@@ -10,8 +10,13 @@ public class SerialPortWriter
 	 */
 	public SerialPortWriter(OutputStream output)
 	{
-		hors = output;
+		sortie = output;
 		
+	}
+	
+	public OutputStream getSortie()
+	{
+		return this.sortie;
 	}
 	
 	public void run() {
@@ -19,7 +24,7 @@ public class SerialPortWriter
 		{
 			int out = 0;
 			while ((out = System.in.read()) > -1) {
-				this.hors.write(out);
+				this.sortie.write(out);
 			}
 		} catch (IOException e) {
 			e.getMessage();

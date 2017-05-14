@@ -40,8 +40,7 @@ public class ElectroGUI extends JFrame implements ActionListener {
 
 	private JTextField textField_id = new JTextField(); 
 	
-	//Declaration du "tableau" de films.
-	public JTable table;
+	
 	private int temperature;
 	private String entreeUserTemp;
 	
@@ -59,20 +58,10 @@ public class ElectroGUI extends JFrame implements ActionListener {
 	//Initialisation d'un champ de texte avec defilement horizontal/vertical.
 	
 	JScrollPane scrollPane = new JScrollPane();
-	private final JButton btnAffichecatalogue = new JButton("afficheCatalogue");
 	private JTextField txtEntrezUneTemp;
 
 	 
 	TextArea texteDescriptif = new TextArea();	// Champ de texte contenant la description.
-	
-	private final TextArea textAreaActeurs = new TextArea();	//Champ de texte contenant le casting d'un film.
-	
-
-
-
-
-
-
 	
 	/**
 	 * Lancement de l'application.
@@ -167,24 +156,13 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		connectButton.addActionListener(this);
 		connectButton.setBounds(242, 11, 89, 23);
 		contentPane.add(connectButton);
-		
-		
-
+	
 		disconnectButton.addActionListener(this);
 		disconnectButton.setBounds(242, 11, 89, 23);
 		contentPane.add(disconnectButton);
-		
-		
-		
-		
-	
-		
-				
 				
 			
 	}
-	
-	
 	
 	/**
 	 * Listener.

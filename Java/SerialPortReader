@@ -10,9 +10,9 @@ public class SerialPortReader implements SerialPortEventListener
     *Constructeur d'objets de la classeSerialPortReader.
     *
     **/
-    public SerialPortReader()
+    public SerialPortReader(InputStreamReader isr)
     {
-        
+        this.entree = isr;
     }
     
     public InputStreamReader getEntree()

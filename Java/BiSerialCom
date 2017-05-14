@@ -1,6 +1,13 @@
 public class BiserialCom
 {
-  void connect( String nomDuCom)
+
+    private InputStream entree;
+    private OutputStream sortie;
+    private SerialPortReader serial;
+    private CommPort comPort;
+    private SerialPort portSerie;
+
+  public void connexion( String nomDuCom)
   {
     try
     {
@@ -15,5 +22,31 @@ public class BiserialCom
     {
       System.err.println(e.getMessage());
     }
+  }
+  
+  public void deconnexion(String nomDuCom)
+  {
+    if (this.connexionEtablie()) 
+    {
+			try {
+				this.sortie.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.comPort.close();
+			System.out.println("Deconnexion du port " + comPort.getName());
+			this.comPort = null;
+		} 
+			System.out.println("Rien à deconnecter.");
+		
+  }
+  /**
+  *Methode de verification de la connexion avec le COM.
+  *@return true si la connexion est etablie, false sinon.
+  **/
+  public boolean connexionEtablie()
+  {
+    
+    return (this.commPort == null)? false : true;
   }
 }

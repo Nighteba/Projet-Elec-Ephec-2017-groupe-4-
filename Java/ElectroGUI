@@ -51,7 +51,7 @@ public class ElectroGUI extends JFrame implements ActionListener {
 	
 	// Initialisation des etiquettes pour les champs de texte.
 	
-	JLabel lblSeuil = new JLabel("Seuil de temperature : ");
+	JLabel lblSeuil = new JLabel("Seuil de temp : ");
 	JLabel lblTempUser = new JLabel("temperature entree :");
 	
 	
@@ -162,7 +162,7 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		contentPane.add(disconnectButton);
 				
 			
-	}
+	}		//fin de ElectroGUI()
 	
 	/**
 	 * Listener.
@@ -174,13 +174,13 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		{	
 			Object source = e.getSource();
 			
-			if(source == connectButton)		//Si l'utilisateur a cliqué sur le bouton de creation de film :
+			if(source == connectButton)		//Si l'utilisateur a cliqué sur le bouton de connexion :
 			{
 				
 				
 				
 			}
-			else if(source == disconnectButton)		//Si l'utilisateur a cliqué sur le bouton de recherche de film :
+			else if(source == disconnectButton)		//Si l'utilisateur a cliqué sur le bouton de deconnexion :
 			{
 				
 				
@@ -192,6 +192,6 @@ public class ElectroGUI extends JFrame implements ActionListener {
 			exc.getMessage();
 		}
 		
-		}
+	}	//fin de actionPerformed()
 	
 }

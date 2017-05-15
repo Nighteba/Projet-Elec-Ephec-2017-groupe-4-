@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,7 @@ public class ElectroGUI extends JFrame implements ActionListener {
 	
 	//déclaration du contenant
 	private JPanel contentPane;
+	
 	
 	//déclaration des champs de textes.
 	
@@ -88,7 +90,7 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 706, 446);
+		setBounds(200, 200, 706, 446);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setBackground(Color.LIGHT_GRAY);		//couleur de la fenetre.
@@ -125,30 +127,17 @@ public class ElectroGUI extends JFrame implements ActionListener {
 			*Eventhandler pour les evenements lies aux clics de souris de l'utilisateur
 			*
 			*/
-			public void mouseClicked(MouseEvent arg0) {
-				//Display selected row in JTextefields
+			public void mouseClicked(MouseEvent arg0) 
+			{
 				
-				   // Recuperation de l'index de la ligne selectionnee.
-		        int i = table.getSelectedRow();
-
-		        TableModel model = table.getModel();
-		        
-		         // Affiche la ligne selectionnee dans les JTexteFields.
-		        textField_id.setText(model.getValueAt(i,0).toString());
-		        textField_1_tempActuelle.setText(model.getValueAt(i,1).toString());
-		        textField_2_tempUser.setText(model.getValueAt(i,2).toString());
-		    
-				
-				
-
 			}
 		} // fin du MouseClicker
 
 		);	//fin du addMouseListener
 		
 				
-		scrollPane.setBounds(207, 75, 473, 144);
-		contentPane.add(scrollPane);
+		//scrollPane.setBounds(207, 75, 473, 144);
+		//contentPane.add(scrollPane);
 		
 		
 		//ajout des boutons
@@ -158,7 +147,7 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		contentPane.add(connectButton);
 	
 		disconnectButton.addActionListener(this);
-		disconnectButton.setBounds(242, 11, 89, 23);
+		disconnectButton.setBounds(342, 11, 89, 23);
 		contentPane.add(disconnectButton);
 				
 			

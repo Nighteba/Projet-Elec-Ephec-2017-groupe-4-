@@ -1,5 +1,9 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -66,6 +70,22 @@ public class ElectroGUI extends JFrame implements ActionListener {
 	TextArea texteDescriptif = new TextArea();	// Champ de texte contenant la description.
 	
 	/**
+	 * Est-ce que le dégradé va passer? Nous allons voir...
+	 * @param g
+	 */
+	protected void paintComponent(Graphics g) {
+        super.paintComponents(g);
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        int w = getWidth();
+        int h = getHeight();
+        Color color1 = Color.RED;
+        Color color2 = Color.GREEN;
+        GradientPaint gp = new GradientPaint(0, 0, color1, 0, h, color2);
+        g2d.setPaint(gp);
+        g2d.fillRect(0, 0, w, h);
+    }
+	/**
 	 * Lancement de l'application.
 	 */
 	public static void main(String[] args) {
@@ -99,10 +119,10 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		
 		//Initialisations des labels.
 		
-		lblSeuil.setBounds(40, 78, 61, 14);
+		lblSeuil.setBounds(40, 78, 161, 14);
 		contentPane.add(lblSeuil);
 		
-		lblTempUser.setBounds(40, 102, 61, 14);
+		lblTempUser.setBounds(40, 102, 161, 14);
 		contentPane.add(lblTempUser);
 		
 		
@@ -113,12 +133,12 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		
 		textField_1_tempActuelle = new JTextField();
 		textField_1_tempActuelle.setColumns(10);
-		textField_1_tempActuelle.setBounds(111, 99, 86, 20);
+		textField_1_tempActuelle.setBounds(171, 74, 86, 20);
 		contentPane.add(textField_1_tempActuelle);
 		
 		textField_2_tempUser = new JTextField();
 		textField_2_tempUser.setColumns(10);
-		textField_2_tempUser.setBounds(111, 124, 86, 20);
+		textField_2_tempUser.setBounds(171, 99, 86, 20);
 		contentPane.add(textField_2_tempUser);
 		
 		scrollPane.addMouseListener(new MouseAdapter() {
@@ -143,11 +163,11 @@ public class ElectroGUI extends JFrame implements ActionListener {
 		//ajout des boutons
 		
 		connectButton.addActionListener(this);
-		connectButton.setBounds(242, 11, 89, 23);
+		connectButton.setBounds(242, 11, 129, 23);
 		contentPane.add(connectButton);
 	
 		disconnectButton.addActionListener(this);
-		disconnectButton.setBounds(342, 11, 89, 23);
+		disconnectButton.setBounds(382, 11, 129, 23);
 		contentPane.add(disconnectButton);
 				
 			
@@ -184,3 +204,5 @@ public class ElectroGUI extends JFrame implements ActionListener {
 	}	//fin de actionPerformed()
 	
 }
+
+

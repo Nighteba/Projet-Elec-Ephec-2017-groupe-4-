@@ -1,4 +1,4 @@
-//beaucoup de ces lignes de code ont été inspiré de Jordan Lagache
+//beaucoup de ces lignes de code ont Ã©tÃ© inspirÃ© de Jordan Lagache
 package Controller_temperature;
 
 import java.awt.Color;
@@ -34,7 +34,7 @@ public class GUI extends JFrame implements ActionListener{
 	private JLabel lblX;
 
 	/**
-	 * Launch the application.
+	 * Methode executrice.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -52,7 +52,7 @@ public class GUI extends JFrame implements ActionListener{
 	public GUI(){};
 
 	/**
-	 * Create the frame.
+	 * Creation de la page.
 	 */
 	public GUI(String title) {
 		super();
@@ -91,7 +91,7 @@ public class GUI extends JFrame implements ActionListener{
 		gbc_list.gridy = 5;
 		contentPane.add(list, gbc_list);
 		list.addActionListener(this);
-		JLabel lblTemperature = new JLabel("Température actuelle");
+		JLabel lblTemperature = new JLabel("TempÃ©rature actuelle");
 		GridBagConstraints gbc_lblTemperature = new GridBagConstraints();
 		gbc_lblTemperature.insets = new Insets(0, 0, 5, 5);
 		gbc_lblTemperature.gridx = 1;
@@ -105,7 +105,7 @@ public class GUI extends JFrame implements ActionListener{
 		gbc_lblX.gridy = 6;
 		contentPane.add(lblX, gbc_lblX);
 		
-		JLabel lblTemperatureMax = new JLabel("Température maximum");
+		JLabel lblTemperatureMax = new JLabel("TempÃ©rature maximale;
 		GridBagConstraints gbc_lblTemperatureMax = new GridBagConstraints();
 		gbc_lblTemperatureMax.insets = new Insets(0, 0, 5, 5);
 		gbc_lblTemperatureMax.gridx = 1;
@@ -166,14 +166,14 @@ public class GUI extends JFrame implements ActionListener{
 				System.out.println("Reset");
 				textField.setText("35");
 				controller.setTemp_max(35);
-				//Remise à 0
+				//Remise Ã  0
 			}else{
-				System.out.println("Aucun évènement associé");
+				System.out.println("Aucun Ã©vÃ¨nement associÃ©");
 			}
 		}
 	}
 	public void alert(int temp){
-		System.out.println("Température actuelle : " + temp + "     Seuil de température :" + controller.getTemp_max());
+		System.out.println("TempÃ©rature actuelle : " + temp + "     Seuil de tempÃ©rature :" + controller.getTemp_max());
 		if(temp < controller.getTemp_max()){
 			//Si tout est bon
 			lblX.setForeground(Color.green);
